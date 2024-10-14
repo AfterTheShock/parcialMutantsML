@@ -3,8 +3,8 @@ package exam.badui.dto;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
 @Setter
+@Getter
 public class DnaRequest {
 
     private String[] dna;
