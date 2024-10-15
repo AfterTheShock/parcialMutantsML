@@ -10,7 +10,7 @@ import java.util.Arrays;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping("api/v1/mutant")
+@RequestMapping("api/v1/dna")
 public class DnaController {
     private DnaService dnaService;
 
@@ -28,7 +28,7 @@ public class DnaController {
     }*/
 
 
-    @PostMapping("")
+    @PostMapping("/mutant")
     public ResponseEntity<String> checkMutant(@RequestBody DnaRequest dnaRequest) {
         boolean isMutant = dnaService.analyzeDna(dnaRequest.getDna());
 
