@@ -4,9 +4,11 @@ import exam.badui.entities.Dna;
 import exam.badui.exception.NoValidDnaException;
 import exam.badui.repositories.DnaRepository;
 import exam.badui.validators.DnaValidator;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -16,6 +18,15 @@ public class DnaService {
     @Autowired
     public DnaService(DnaRepository dnaRepository){
         this.dnaRepository = dnaRepository;
+    }
+
+    @Transactional
+    public List<Dna> findall() throws Exception {
+        try {
+            return dnaRepository.findAll();
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
     }
 
     public boolean isMutant(String[] dna){
