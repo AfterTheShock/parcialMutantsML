@@ -18,14 +18,14 @@ public class DnaController {
         this.dnaService = dnaService;
     }
 
-    @GetMapping("")
+    /*@GetMapping("")
     public ResponseEntity<?> getAll(){
         try {
             return ResponseEntity.status(HttpStatus.OK).body(dnaService.findall());
         }catch (Exception e){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Error. Por favor intente mas tarde.\"}");
         }
-    }
+    }*/
 
 
     @PostMapping("")

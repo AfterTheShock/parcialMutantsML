@@ -20,14 +20,14 @@ public class DnaService {
         this.dnaRepository = dnaRepository;
     }
 
-    @Transactional
+    /*@Transactional
     public List<Dna> findall() throws Exception {
         try {
             return dnaRepository.findAll();
         } catch (Exception e) {
             throw new Exception(e.getMessage());
         }
-    }
+    }*/
 
     public boolean isMutant(String[] dna){
         int totalSeq = 0;
