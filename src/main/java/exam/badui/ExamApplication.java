@@ -12,22 +12,6 @@ public class ExamApplication {
     public static void main(String[] args) {
         ApplicationContext context = SpringApplication.run(ExamApplication.class, args);
 
-        DnaService dnaService = context.getBean(DnaService.class);
-
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Ingrese el tamaño de la matriz NxN: ");
-        int n = scanner.nextInt();
-        scanner.nextLine();
-
-        String[] dna = new String[n];
-        System.out.println("Ingrese las filas de ADN");
-
-        for (int i = 0; i < n; i++) {
-            dna[i] = scanner.nextLine();
-        }
-
-        dnaService.analyzeDna(dna);
-
-        scanner.close();
+        System.out.println("Running...");
     }
 }

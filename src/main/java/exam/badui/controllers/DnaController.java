@@ -6,10 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
-
 @RestController
-@CrossOrigin(origins = "*")
 @RequestMapping("api/v1/mutant")
 public class DnaController {
     private DnaService dnaService;
