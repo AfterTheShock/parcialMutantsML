@@ -10,7 +10,7 @@ import java.util.Arrays;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping("api/v1/dna")
+@RequestMapping("api/v1/mutant")
 public class DnaController {
     private DnaService dnaService;
 
@@ -18,17 +18,10 @@ public class DnaController {
         this.dnaService = dnaService;
     }
 
-    @GetMapping("")
-    public ResponseEntity<?> getAll(){
-        try {
-            return ResponseEntity.status(HttpStatus.OK).body(dnaService.findall());
-        }catch (Exception e){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Error. Por favor intente mas tarde.\"}");
-        }
-    }
+    @GetMapping
+    public String showDna() { return "Hola papu"; }
 
-
-    @PostMapping("")
+    @PostMapping
     public ResponseEntity<String> checkMutant(@RequestBody DnaRequest dnaRequest) {
         boolean isMutant = dnaService.analyzeDna(dnaRequest.getDna());
 
