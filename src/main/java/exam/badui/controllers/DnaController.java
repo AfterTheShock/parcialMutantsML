@@ -18,6 +18,7 @@ public class DnaController {
     @GetMapping
     public String showDna() { return "Hola papu"; }
 
+    @CrossOrigin(origins = "http://127.0.0.1:5500")
     @PostMapping
     public ResponseEntity<String> checkMutant(@RequestBody DnaRequest dnaRequest) {
         boolean isMutant = dnaService.analyzeDna(dnaRequest.getDna());
