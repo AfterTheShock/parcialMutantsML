@@ -106,3 +106,10 @@ Matriz de ADN humano:
 ### Testing
 
 En la carpeta _parcialMutantsML\src\test_ se incluyen casos de pruebas unitarias.
+
+### Modelos de Diagrama de Secuencia
+POST `/mutant`
+![Modelo de Secuencia POST Service](https://github.com/user-attachments/assets/d1d3a3e9-2f14-4692-a83e-834474c0fe8f)
+
+GET `/stats`
+![Modelo de Secuencia GET Service](https://github.com/user-attachments/assets/959aec3c-cf7a-47b6-a8cd-d800574bd0f2)
