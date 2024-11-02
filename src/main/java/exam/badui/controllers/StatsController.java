@@ -16,7 +16,6 @@ public class StatsController {
         this.statsService = statsService;
     }
 
-    @CrossOrigin(origins = "http://127.0.0.1:5500")
     @GetMapping
     public StatsResponse getStats() { return statsService.getStats(); }
 }

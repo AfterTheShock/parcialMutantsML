@@ -1,6 +1,7 @@
 package exam.badui.controllers;
 
 import exam.badui.dto.DnaRequest;
+import exam.badui.dto.DnaResponse;
 import exam.badui.services.DnaService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,22 +16,19 @@ public class DnaController {
         this.dnaService = dnaService;
     }
 
-    @GetMapping
-    public String showDna() { return "Hola papu"; }
-
-    @CrossOrigin(origins = "http://127.0.0.1:5500")
     @PostMapping
-    public ResponseEntity<String> checkMutant(@RequestBody DnaRequest dnaRequest) {
+    public ResponseEntity<DnaResponse> checkMutant(@RequestBody DnaRequest dnaRequest) {
         boolean isMutant = dnaService.analyzeDna(dnaRequest.getDna());
+        DnaResponse dnaResponse = new DnaResponse(isMutant);
 
         try{
             if(isMutant){
-                return ResponseEntity.status(HttpStatus.OK).body("Mutante detectado");
+                return ResponseEntity.status(HttpStatus.OK).body(dnaResponse);
             }else{
-                return ResponseEntity.status(HttpStatus.FORBIDDEN).body("No es mutante");
+                return ResponseEntity.status(HttpStatus.FORBIDDEN).body(dnaResponse);
             }
         }catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(dnaResponse);
         }
     }
 }
