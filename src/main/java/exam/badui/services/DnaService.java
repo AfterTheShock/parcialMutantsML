@@ -29,7 +29,7 @@ public class DnaService {
         }
     }
 
-    public boolean isMutant(String[] dna){
+    public static boolean isMutant(String[] dna){
         int totalSeq = 0;
 
         //Verifica las secuencias horizontales
@@ -46,7 +46,7 @@ public class DnaService {
         return DnaValidator.isValid(dna);
     }
 
-    private char[][] transposeArray(char[][] doubleCharArray){
+    private static char[][] transposeArray(char[][] doubleCharArray){
         for (int i = 0; i < doubleCharArray.length; i++) {
             for (int j = 0; j < i; j++) {
                 char aux = doubleCharArray[i][j];
@@ -58,7 +58,7 @@ public class DnaService {
         return doubleCharArray;
     }
 
-    private char[][] convertStringToCharArray(String[] stringArray){
+    private static char[][] convertStringToCharArray(String[] stringArray){
         char[][] charArray = new char[stringArray.length][];
 
         for(int i = 0; i < stringArray.length; i++){
@@ -68,7 +68,7 @@ public class DnaService {
         return charArray;
     }
 
-    private int horizontalVer(char[][] doubleCharArray, int totalSeq){
+    private static int horizontalVer(char[][] doubleCharArray, int totalSeq){
         int hSeq = 0;
 
         for (int i = 0; i < doubleCharArray.length; i++) {
@@ -104,7 +104,7 @@ public class DnaService {
         return hSeq;
     }
 
-    private int diagonalVer(char[][] doubleCharArray, int totalSeq){
+    private static int diagonalVer(char[][] doubleCharArray, int totalSeq){
         int dSeq = 0;
         int n = doubleCharArray.length;
 
